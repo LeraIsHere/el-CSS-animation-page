@@ -1,0 +1,47 @@
+header{
+    width: 100%;
+    @include flex();
+    @include fix(0,auto,auto,0);
+    padding: 30px;
+
+    .logo{
+        font-size: 30px;
+        color: #308879;
+    }
+
+    nav{
+        ul{
+            @include flex(center, space-around);
+
+            li{
+                margin: 0 20px;
+                animation: navLink .3s linear backwards;
+                animation-delay: calc(.7s * var(--i));
+
+                a{
+                    font-size: 20px;
+                    color: #308879;
+                    transition: letter-spacing .2s;
+
+                    &:hover{
+                        letter-spacing: 2px;
+                    }
+
+                }
+
+                &:last-child a{
+                    padding: 7px 50px;
+                    background-color: #308879;
+                    color: $white;
+                    border-radius: 50px;
+                }
+
+                @keyframes navLink {
+                    0%{
+                        transform: translateY(-50px) scale(0) rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}

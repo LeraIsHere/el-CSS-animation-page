@@ -1,0 +1,70 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+    @include flex(center,space-around);
+    padding: 0 40px;
+    background-color: #E9E8EE;
+
+    .image{
+        margin-top: 200px;
+
+        img{
+            width: 50vw;
+        }
+    }
+
+    .content{
+        margin-top: -100px;
+        padding-left: 100px;
+
+        h1{
+            color: #308879;
+            font-size: 80px;
+            animation: fadeIn 1s linear backwards;
+        }
+
+        h3{
+            color: #308879;
+            font-size: 44px;
+            font-weight: 400;
+            animation: fadeIn 1s linear backwards;
+            animation-delay: .2s;
+        }
+
+        p{
+            color: #aaa;
+            font-size: 15px;
+            padding: 20px 0;
+            animation: fadeIn 1s linear backwards;
+            animation-delay: .3s;
+        }
+
+        button{
+            @include box(180px,40px);
+            color: $white;
+            background-color: #308879;
+            border-radius: 50px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: .2s;
+            animation: fadeIn 1s linear backwards;
+            animation-delay: .6s;
+
+            &:hover{
+                opacity: .8;
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    @keyframes fadeIn {
+        0%{
+            transform: translateY(-150px) scale(0) rotate(45deg);
+            transform-origin: left;
+        }
+        100%{
+            transform: translateY(0) scale(1) rotate(0deg);
+            transform-origin: left;
+        }
+    }
+}
